@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://127.0.0.1:8002/static/css/registration.css">
+    <title>Login</title>
+</head>
+<body style="text-align:center;">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class=”wrapper”>
+ <div class=”registration_form”>
+<!– Title –>
+  <div class=”title” style="color:orange">
+    Login
+  </div>
+<!– Form –>
+     <br>
+     <br>
+
+ <form method="post" action="login">
+     {% csrf_token %}
+
+
+  <div class=”form_wrap”>
+   <div class=”input_grp”>
+<!– username input Place –>
+     <div class=”input_wrap”>
+
+  	<input type="text" name="username" placeholder="Username">
+     </div><br>
+<!– password –>
+ <div class=”input_wrap”>
+  <input type="password" name="password" placeholder="password">
+ </div><br>
+<!– Confirm password –>
+ <div class=”input_wrap”>
+
+<!– Submit button –>
+ <div class=”input_wrap”>
+   <input type="submit" name="login" value="Login" class=”submit_btn” >
+ </div>
+<div>
+    {% for i in messages %}
+    <br>
+    <h3>{{i}}</h3>
+    {% endfor %}
+</div>
+</div>
+  </div>
+ </form>
+</body>
+</html>

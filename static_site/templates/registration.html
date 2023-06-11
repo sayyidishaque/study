@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://127.0.0.1:8002/static/css/registration.css">
+    <title>Registration</title>
+</head>
+<body style="text-align:center">
+<br>
+<br>
+<div class=”wrapper”>
+ <div class=”registration_form”>
+<!– Title –>
+  <div class=”title” style="color:yellow">
+    Registration Form
+  </div>
+<!– Form –>
+     <br>
+     <br>
+
+ <form method="post" action="registration">
+     {% csrf_token %}
+
+
+  <div class=”form_wrap”>
+   <div class=”input_grp”>
+<!– First name input Place –>
+     <div class=”input_wrap”>
+
+  	<input type="text" name="username" placeholder="Username">
+     </div><br>
+<!– First Name –>
+    <div class=”input_wrap”>
+      <input type="text" name='firstname' placeholder="First Name">
+    </div>
+  </div><br>
+<!– Last Name –>
+ <div class=”input_wrap”>
+
+  <input type="text" name="lastname" placeholder="Last Name">
+ </div><br>
+<!– Emile –>
+ <div class=”input_wrap”>
+
+  <input type="email" name="email" placeholder="E-mail address eg(xx@xx.com)">
+ </div><br>
+<!– password –>
+ <div class=”input_wrap”>
+  <input type="password" name="password" placeholder="password">
+ </div><br>
+<!– Confirm password –>
+ <div class=”input_wrap”>
+
+  <input type="password" name="cpassword" placeholder="Confirm password">
+ </div><br>
+</div>
+<!– Submit button –>
+ <div class=”input_wrap”>
+   <input type="submit" name="registration" value="Register Now" class=”submit_btn” >
+ </div>
+     <div>
+         <br>
+     {% for i  in messages %}
+        <h3 style="color:red;">{{i}}</h3>
+     {% endfor %}
+     </div>
+</div>
+</form>
+</div>
+</body>
+</html>
