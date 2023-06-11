@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+<!--    Task adding Part-->
+    <div class="row">
+        <div class="col-md-6"><br><br>
+            <div class="form-floating mb-3">
+            <form method="post">
+                {% csrf_token %}
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <input type="text" name="name" placeholder="Task Name"></div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <input type="number" name="priority" placeholder="Priority"></div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <input type="date" name="date">
+                <input type="submit" value="Add" style="background-color:green"></div>
+            </form>
+                </div>
+        </div>
+<!--        Task Displaying part-->
+        <div class="col-md-6">
+            {% for i in task %}
+            <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+            <ul class="list-group">
+
+                <li class="list-group-item">{{i.Name}}</li>
+                <li class="list-group-item">{{i.Priority}}</li>
+                <li class="list-group-item">{{i.Date}}</li>
+
+            </ul>
+                <a class="btn btn-danger" href="{% url 'delete' i.id %}">Delete</a>
+                <a class="btn btn-success" href="{% url 'update' i.id %}">Update</a>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
