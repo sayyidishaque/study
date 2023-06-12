@@ -27,18 +27,18 @@
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
 						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-							<div class="logo"><a href="index.html">SAYYID ISHAQUE</a></div>
+							<div class="logo"><a href="{% url 'static_app:index' %}">SAYYID ISHAQUE</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="index.html">Home</a></li>
-									<li class="active"><a href="about.html">About us</a></li>
+									<li><a href="{% url 'static_app:index' %}">Home</a></li>
+									<li class="active"><a href="">About us</a></li>
 									{% if user.is_authenticated %}
-									<li class="active"><a href="logout/logout">Hi, {{user.username}}, Logout</a></li>
+									<li class="active"><a href="{% url 'static_app:logout' %}">Hi, {{user.username}}, Logout</a></li>
 									<li><a href="contact.html">Contact</a></li>
 									{% else %}
-									<li><a href="registration/registration">Registration</a></li>
-									<li><a href="login/login">Login</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="{% url 'static_app:registration' %}">Registration</a></li>
+									<li><a href="{% url 'static_app:login' %}">Login</a></li>
+									<li><a href="">Contact</a></li>
 									{% endif %}
 								</ul>
 							</nav>
@@ -76,11 +76,11 @@
 		</div>
 		<div class="menu_content">
 			<ul>
-				<li><a href="inex.html">Home</a></li>
-				<li><a href="about.html">About us</a></li>
+				<li><a href="{% url 'static_app:index' %}">Home</a></li>
+				<li><a href="">About us</a></li>
 				<li><a href="#">Services</a></li>
-				<li><a href="news.html">News</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="">News</a></li>
+				<li><a href="">Contact</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">

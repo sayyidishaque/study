@@ -12,14 +12,14 @@
 <div class=”wrapper”>
  <div class=”registration_form”>
 <!– Title –>
-  <div class=”title” style="color:yellow">
+  <div class=”title” style="color:brown">
     Registration Form
   </div>
 <!– Form –>
      <br>
      <br>
 
- <form method="post" action="registration">
+ <form method="post" action="{% url 'static_app:registration' %}">
      {% csrf_token %}
 
 

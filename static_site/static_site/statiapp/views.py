@@ -28,20 +28,20 @@ def registration(request):
         if password == cpassword:
             if User.objects.filter(username=username).exists():
                 messages.info(request, 'This username Already Exist')
-                return redirect('registration')
+                return redirect('static_app:registration')
             elif User.objects.filter(email=email).exists():
                 messages.info(request, 'This Email is already registered')
-                return redirect('registration')
+                return redirect('static_app:registration')
             else:
                 user = User.objects.create_user(username=username, first_name=firstname, last_name=lastname,
                                                 email=email, password=password)
                 user.save()
                 print('user saved')
                 messages.info(request, "User Created")
-                return redirect('login')
+                return redirect('static_app:login')
         else:
             messages.info(request, 'password & confirm password does not match')
-            return redirect('registration')
+            return redirect('static_app:registration')
     else:
         return render(request, 'registration.html')
 
@@ -57,7 +57,7 @@ def login(request):
             return redirect('/')
         else:
             messages.info(request, 'Invalid usename\password')
-            return redirect('login')
+            return redirect('static_app:login')
     else:
         return render(request, 'login.html')
 def logout(request):

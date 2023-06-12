@@ -21,7 +21,7 @@ body{
 .registration_form{
   border-radius: 5px;
   width: 400px;
-  background: white;
+  background: black;
   padding: 25px;
 }
 .registration_form .title{

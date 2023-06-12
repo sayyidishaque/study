@@ -23,9 +23,9 @@ from static_site import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('statiapp.urls')),
-    path('registration/', include('statiapp.urls')),
-    path('login/', include('statiapp.urls')),
-    path('logout/', include('statiapp.urls')),
+    # path('registration/', include('statiapp.urls')),
+    # path('login/', include('statiapp.urls')),
+    # path('logout/', include('statiapp.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
